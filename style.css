@@ -1,0 +1,165 @@
+html,
+body,
+div,
+a {
+  margin: 0;
+  padding: 0;
+}
+
+.window {
+  width: 240px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25vh;
+
+  background: #d5d5d5;
+  border: 1px solid rgba(0,0,0,0.35);
+  border-radius: 4px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 16px 4px rgba(0,0,0,0.18),
+              0 16px 64px 0 rgba(0,0,0,0.18);
+
+  font-family: 'Droid Sans', sans-serif;
+  font-size: 9pt;
+}
+
+.toolbar {
+  position: relative;
+  display: flex;
+  top: -1px;
+  left: -1px;
+  width: 100%;
+  height: 48px;
+  z-index: 1000;
+
+  background-image: linear-gradient(#8e8b85, #615d59);
+  border: 1px solid #4c4a47;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  box-shadow: 1px 0px 0 0 rgba(255,255,255,0.05) inset,
+              -1px 0px 0 0 rgba(255,255,255,0.05) inset,
+              0 1px 0 0 rgba(255,255,255,0.2) inset,
+              0 -1px 0 0 rgba(255,255,255,0.1) inset;
+}
+
+#close-icon {
+  margin-top: 16px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.title {
+  margin: 0;
+  flex-grow: 1;
+
+  color: #fbfbfb;
+  font-weight: bold;
+  line-height: 48px;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+}
+
+#recent-icon {
+  margin-top: 16px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.display {
+  position: relative;
+  top: -2px;
+  height: 86px;
+
+  background-image: linear-gradient(#dad7bd, #e8e5d3);
+  border-top: 1px solid #837d70;
+  border-bottom: 1px solid #979186;
+  box-shadow: 0 1px 0 0 rgba(0,0,0,0.1) inset,
+              0 -1px 0 0 rgba(0,0,0,0.05) inset,
+              0 1px 0 0 rgba(255,255,255,0.4);
+
+  font-family: 'Open Sans Light', 'Open Sans', sans-serif;
+  font-weight: 100;
+}
+
+.display * {
+  margin: 8px;
+
+  color: #6d6559;
+  text-align: right;
+}
+
+.input {
+  font-size: 32px;
+  line-height: 32px;
+}
+
+.output {
+  border-top: 2px solid #c8c6b0;
+
+  font-size: 22px;
+  line-height: 32px
+}
+
+.row {
+  display: flex;
+}
+
+.buttons .row a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin: 4px;
+
+  background-image: linear-gradient(#8e8b85, #615d59);
+  border: 1px solid #4c4a47;
+  border-radius: 2px;
+  box-shadow: 1px 0px 0 0 rgba(255,255,255,0.05) inset,
+              -1px 0px 0 0 rgba(255,255,255,0.05) inset,
+              0 1px 0 0 rgba(255,255,255,0.2) inset,
+              0 -1px 0 0 rgba(255,255,255,0.1) inset,
+              0 1px 0 0 rgba(0,0,0,0.2);
+
+  color: #fbfbfb;
+  line-height: 40px;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+
+  transition: all 200ms ease-in-out;
+}
+
+.buttons .row a:hover {
+  background-image: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)),
+                    linear-gradient(#8e8b85, #615d59);
+}
+
+.buttons .row a.orange {
+  background-image: linear-gradient(#ffca7a, #ed5d1f);
+  border: 1px solid #b84722;
+}
+
+.buttons .row a.red {
+  background-image: linear-gradient(#ed5351, #ba2a28);
+  border: 1px solid #b51820;
+}
+
+.buttons .row p,
+.buttons .row .arrow-down {
+  display: inline-block;
+  height: 40px;
+  margin: 4px;
+
+  line-height: 40px;
+}
+
+.buttons .row .arrow-down {
+	width: 0;
+	height: 0;
+  margin-top: 18px;
+  margin-left: 8px;
+
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	border-top: 8px solid #333;
+  box-sizing: border-box;
+}
