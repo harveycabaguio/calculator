@@ -67,9 +67,53 @@
           <a class="orange" href="#">=</a>
         </div>
         <div class="row">
-          <div class="arrow-down"></div>
-          <p>Scientific Stuff</p>
+          <label class="label" for="toggle">Scientific</label>
+          <label class="switch no-label toggle" for="toggle">
+            <input type="checkbox" class="switch-input" id="toggle">
+            <span class="switch-trough" data-on="On" data-off="Off"></span>
+            <span class="switch-handle"></span>
+          </label>
         </div>
+        <section id="science" data-toggle="off">
+          <div class="row">
+            <a href="#">(</a>
+            <a href="#">)</a>
+            <a href="#">sin</a>
+            <a href="#">cos</a>
+            <a href="#">tan</a>
+          </div>
+          <div class="row">
+            <a href="#">x<sup>y</sup></a>
+            <a href="#">&radic;</a>
+            <a href="#">sinh</a>
+            <a href="#">cosh</a>
+            <a href="#">tanh</a>
+          </div>
+          <div class="row">
+            <a href="#">&pi;</a>
+            <a href="#">e</a>
+            <a href="#">log</a>
+            <a href="#">ln</a>
+          </div>
+        </section>
+        <script type="text/javascript">
+          var toggle = document.getElementById("toggle");
+          var science = document.getElementById("science");
+
+          function stateChange() {
+            if (toggle.checked) {
+              science.setAttribute("data-toggle", "on");
+            } else {
+              science.setAttribute("data-toggle", "off");
+            }
+          }
+
+          window.onload= function () {
+            console.log("loaded");
+            toggle.addEventListener("click", stateChange);
+            console.log(toggle);
+          };
+        </script>
       </div>
 
     </div>

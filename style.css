@@ -7,7 +7,7 @@ a {
 }
 
 .window {
-  width: 240px;
+  width: 292px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 25vh;
@@ -21,6 +21,11 @@ a {
 
   font-family: 'Droid Sans', sans-serif;
   font-size: 9pt;
+
+  -webkit-user-select: none;
+  user-select: none;
+  transition: max-height 200ms ease-in-out;
+  overflow: hidden;
 }
 
 .toolbar {
@@ -57,6 +62,8 @@ a {
   line-height: 48px;
   text-align: center;
   text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+
+
 }
 
 #recent-icon {
@@ -86,6 +93,9 @@ a {
 
   color: #6d6559;
   text-align: right;
+
+  -webkit-user-select: all;
+  user-select: all;
 }
 
 .input {
@@ -106,7 +116,8 @@ a {
 
 .buttons .row a {
   display: inline-block;
-  width: 40px;
+  flex-grow: 0;
+  width: 48px;
   height: 40px;
   margin: 4px;
 
@@ -125,7 +136,6 @@ a {
   text-decoration: none;
   text-shadow: 0 1px 1px rgba(0,0,0,0.5);
 
-  transition: all 200ms ease-in-out;
 }
 
 .buttons .row a:hover {
@@ -143,23 +153,168 @@ a {
   border: 1px solid #b51820;
 }
 
-.buttons .row p,
-.buttons .row .arrow-down {
+.buttons .row .label {
   display: inline-block;
+  flex-grow: 1;
   height: 40px;
   margin: 4px;
+  margin-left: 12px;
 
   line-height: 40px;
 }
 
-.buttons .row .arrow-down {
-	width: 0;
-	height: 0;
-  margin-top: 18px;
-  margin-left: 8px;
+#science {
+  transition: all 200ms ease-in-out;
+}
 
-	border-left: 4px solid transparent;
-	border-right: 4px solid transparent;
-	border-top: 8px solid #333;
-  box-sizing: border-box;
+#science[data-toggle='off'] {
+  max-height: 0;
+  opacity: 0;
+}
+
+#science[data-toggle='on'] {
+  opacity: 1.0;
+  max-height: 150px;
+}
+
+/*----- Sam's Switch -----*/
+
+.switch {
+    margin: 9px;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 64px;
+    height: 24px;
+    padding: 3px;
+    background-color: transparent;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.switch-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.switch-input:focus ~ .switch-handle {
+    box-shadow: 0 0 4px 1px #469DF6, 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+}
+
+.switch-group {
+    display: inline-block;
+    width: 100%;
+}
+
+/* No Label */
+
+.switch.no-label  {
+    width: 40px;
+}
+
+.switch.no-label > .switch-input:checked ~ .switch-handle {
+    left: 20px;
+}
+
+.switch.no-label > .switch-trough {
+    font-size: 0;
+}
+
+/*----- Switch Trough -----*/
+
+.switch-trough {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    position: relative;
+    display: block;
+    height: inherit;
+    font-size: 11px;
+    text-transform: uppercase;
+    background: #eceeef;
+    border-radius: inherit;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.15);
+    -webkit-transition: 0.15s ease-out;
+    -moz-transition: 0.15s ease-out;
+    -o-transition: 0.15s ease-out;
+    transition: 0.15s ease-out;
+    -webkit-transition-property: opacity background;
+    -moz-transition-property: opacity background;
+    -o-transition-property: opacity background;
+    transition-property: opacity background;
+}
+
+
+.switch-trough:before, .switch-trough:after {
+    position: absolute;
+    top: 50%;
+    margin-top: -0.5em;
+    line-height: 1;
+    -webkit-transition: inherit;
+    -moz-transition: inherit;
+    -o-transition: inherit;
+    transition: inherit;
+}
+
+.switch-trough:before {
+    content: attr(data-off);
+    right: 11px;
+    color: #aaa;
+    text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+}
+
+.switch-trough:after {
+    content: attr(data-on);
+    left: 11px;
+    color: white;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+}
+
+/*----- Switch Handle -----*/
+
+.switch-handle {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 22px;
+    height: 22px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+    -webkit-transition: left 0.15s ease-out;
+    -moz-transition: left 0.15s ease-out;
+    -o-transition: left 0.15s ease-out;
+    transition: left 0.15s ease-out;
+}
+
+.switch-handle:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -6px 0 0 -6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+}
+
+
+/*----- Checked Switch -----*/
+
+.switch-input:checked ~ .switch-trough {
+    background: #419BF9;
+}
+
+.switch-input:checked ~ .switch-trough:before {
+    opacity: 0;
+}
+
+.switch-input:checked ~ .switch-trough:after {
+    opacity: 1;
+}
+
+.switch-input:checked ~ .switch-handle {
+    left: 44px;
 }
