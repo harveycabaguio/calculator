@@ -1,18 +1,46 @@
 html,
 body,
 div,
-a {
+a,
+h1 {
   margin: 0;
   padding: 0;
+}
+
+body {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+
+  background-image: url(https://images.unsplash.com/photo-1453227588063-bb302b62f50b?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=cb544f8f6b9c25ac9f109fdecf760500);
+  background-size: cover;
+
+  opacity: 0;
+  transition: all 100ms ease-in-out;
+}
+
+body:hover {
+  opacity: 1.0;
+}
+
+h1 {
+  margin-top: 64px;
+  margin-bottom: 64px;
+
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 32px;
+  font-weight: 100;
+  text-align: center;
 }
 
 .window {
   width: 292px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 25vh;
 
   background: #d5d5d5;
+  background-clip: content-box;
   border: 1px solid rgba(0,0,0,0.35);
   border-radius: 4px;
   box-sizing: border-box;
@@ -141,6 +169,10 @@ a {
 .buttons .row a:hover {
   background-image: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)),
                     linear-gradient(#8e8b85, #615d59);
+}
+
+.buttons .row a.symbol {
+  font-size: 11pt;
 }
 
 .buttons .row a.orange {
