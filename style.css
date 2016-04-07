@@ -15,12 +15,7 @@ body {
   background-image: url(https://images.unsplash.com/photo-1453227588063-bb302b62f50b?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=cb544f8f6b9c25ac9f109fdecf760500);
   background-size: cover;
 
-  opacity: 0;
-  transition: all 100ms ease-in-out;
-}
-
-body:hover {
-  opacity: 1.0;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -35,7 +30,7 @@ h1 {
 }
 
 .window {
-  width: 292px;
+  width: 272px;
   margin-left: auto;
   margin-right: auto;
 
@@ -62,7 +57,7 @@ h1 {
   top: -1px;
   left: -1px;
   width: 100%;
-  height: 48px;
+  height: 38px;
   z-index: 1000;
 
   background-image: linear-gradient(#8e8b85, #615d59);
@@ -75,10 +70,10 @@ h1 {
               0 -1px 0 0 rgba(255,255,255,0.1) inset;
 }
 
-#close-icon {
-  margin-top: 16px;
-  margin-left: 8px;
-  margin-right: 8px;
+.icon {
+  margin-top: 11px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .title {
@@ -87,17 +82,9 @@ h1 {
 
   color: #fbfbfb;
   font-weight: bold;
-  line-height: 48px;
+  line-height: 38px;
   text-align: center;
   text-shadow: 0 1px 1px rgba(0,0,0,0.5);
-
-
-}
-
-#recent-icon {
-  margin-top: 16px;
-  margin-left: 8px;
-  margin-right: 8px;
 }
 
 .display {
@@ -140,14 +127,20 @@ h1 {
 
 .row {
   display: flex;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
-.buttons .row a {
+.buttons > .row:first-child {
+  margin-top: 5px;
+}
+
+a {
   display: inline-block;
   flex-grow: 0;
   width: 48px;
   height: 40px;
-  margin: 4px;
+  margin: 1px;
 
   background-image: linear-gradient(#8e8b85, #615d59);
   border: 1px solid #4c4a47;
@@ -166,31 +159,30 @@ h1 {
 
 }
 
-.buttons .row a:hover {
+a:hover {
   background-image: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)),
                     linear-gradient(#8e8b85, #615d59);
 }
 
-.buttons .row a.symbol {
-  font-size: 11pt;
+a.symbol {
+  font-size: 12pt;
 }
 
-.buttons .row a.orange {
+a.orange {
   background-image: linear-gradient(#ffca7a, #ed5d1f);
   border: 1px solid #b84722;
 }
 
-.buttons .row a.red {
+a.red {
   background-image: linear-gradient(#ed5351, #ba2a28);
   border: 1px solid #b51820;
 }
 
-.buttons .row .label {
+.label {
   display: inline-block;
   flex-grow: 1;
   height: 40px;
-  margin: 4px;
-  margin-left: 12px;
+  margin-left: 6px;
 
   line-height: 40px;
 }
@@ -202,17 +194,19 @@ h1 {
 #science[data-toggle='off'] {
   max-height: 0;
   opacity: 0;
+
 }
 
 #science[data-toggle='on'] {
-  opacity: 1.0;
   max-height: 150px;
+  margin-bottom: 5px;
+  opacity: 1.0;
 }
 
 /*----- Sam's Switch -----*/
 
 .switch {
-    margin: 9px;
+    margin: 5px;
     position: relative;
     display: inline-block;
     vertical-align: top;
