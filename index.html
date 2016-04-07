@@ -1,13 +1,28 @@
 <!doctype html>
 <html>
   <head>
-    <title>Calculator Mockup</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="author" content="Daniel Foré">
+    <meta name="theme-color" content="#dc322f">
+    <meta name="description" content="Pantheon's calculator app mocked up in HTML/CSS.">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@harveycabaguio">
+    <meta name="twitter:creator" content="@harveycabaguio">
+
+    <meta property="og:title" content="Pantheon Calculator">
+    <meta property="og:description" content="Pantheon's calculator app mocked up in HTML/CSS.">
+    <meta property="og:image" content="/image.png">
+
+    <title>Pantheon Calculator Mockup</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-
+    <h1>Pantheon Calculator</h1>
     <div class="window">
-
       <div class="toolbar">
         <svg
           height="16"
@@ -54,20 +69,20 @@
       <div class="buttons">
         <div class="row">
           <a class="red" href="#">C</a>
-          <a href="#">&larr;</a>
-          <a href="#">&plusmn;</a>
-          <a href="#">%</a>
+          <a class="symbol" href="#">&larr;</a>
+          <a class="symbol" href="#">&plusmn;</a>
+          <a class="symbol" href="#">&#37;</a>
           <a href="#">ANS</a>
         </div>
         <div class="row">
-          <a href="#">+</a>
-          <a href="#">-</a>
-          <a href="#">&times;</a>
-          <a href="#">&divide;</a>
-          <a class="orange" href="#">=</a>
+          <a class="symbol" href="#">&plus;</a>
+          <a class="symbol" href="#">&minus;</a>
+          <a class="symbol" href="#">&times;</a>
+          <a class="symbol" href="#">&divide;</a>
+          <a class="orange symbol" href="#">&equals;</a>
         </div>
         <div class="row">
-          <label class="label" for="toggle">Scientific</label>
+          <label class="label" for="toggle">Scientific:</label>
           <label class="switch no-label toggle" for="toggle">
             <input type="checkbox" class="switch-input" id="toggle">
             <span class="switch-trough" data-on="On" data-off="Off"></span>
@@ -84,14 +99,14 @@
           </div>
           <div class="row">
             <a href="#">x<sup>y</sup></a>
-            <a href="#">&radic;</a>
+            <a class="symbol" href="#">&radic;</a>
             <a href="#">sinh</a>
             <a href="#">cosh</a>
             <a href="#">tanh</a>
           </div>
           <div class="row">
-            <a href="#">&pi;</a>
-            <a href="#">e</a>
+            <a class="symbol" href="#">&pi;</a>
+            <a class="symbol" href="#">e</a>
             <a href="#">log</a>
             <a href="#">ln</a>
           </div>
